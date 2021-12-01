@@ -38,6 +38,13 @@ pipeline {
             }
           }
         }
+        stage('Create Jarfile') {
+          steps {
+            container('kaniko') {
+              sh 'date'
+            }
+          }
+        }
       }
     }
 

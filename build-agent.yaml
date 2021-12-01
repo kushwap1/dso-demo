@@ -33,6 +33,18 @@ spec:
       command:
         - cat
       tty: true
+    - name: kaniko
+      image: gcr.io/kaniko-project/executor:latest
+      args:
+      - "--dockerfile=/dso-demo/Dockerfile"
+      - "--context=gs://devsecopsbucket/dso-demo"
+      - "--destination=<gcr.io/$PROJECT/$IMAGE:$TAG>"
+      volumeMounts:
+      - name: kaniko-secret
+        mountPath: /secret
+      env:
+      - name: GOOGLE_APPLICATION_CREDENTIALS
+        value: /secret/kaniko-secret.json
   volumes:
     - name: m2
       hostPath:
@@ -43,3 +55,6 @@ spec:
     - name: trivycache
       hostPath:
         path: /tmp/trivycache/
+    - name: kaniko-secret
+      secret:
+        secretName: kaniko-secret
