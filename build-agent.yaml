@@ -58,6 +58,6 @@ spec:
         sources:
         - secret:
           name: regcred
-         items:
+          items:
            - key: .dockerconfigjson
              path: config.json
