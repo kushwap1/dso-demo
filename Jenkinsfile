@@ -38,7 +38,7 @@ pipeline {
             }
           }
         }
-        stage('Create Jarfile') {
+        stage('Image Build and Push') {
           steps {
             container('kaniko') {
               sh 'date'
