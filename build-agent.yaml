@@ -34,17 +34,15 @@ spec:
         - cat
       tty: true
     - name: kaniko
-      image: gcr.io/kaniko-project/executor:latest
+      image: gcr.io/kaniko-project/executor:v1.6.0-debug
+      imagePullPolicy: Always
+      command:
+      - sleep
       args:
-      - "--dockerfile=/dso-demo/Dockerfile"
-      - "--context=gs://devsecopsbucket/dso-demo"
-      - "--destination=<gcr.io/$PROJECT/$IMAGE:$TAG>"
+      - 99d
       volumeMounts:
-      - name: kaniko-secret
-        mountPath: /secret
-      env:
-      - name: GOOGLE_APPLICATION_CREDENTIALS
-        value: /secret/kaniko-secret.json
+      - name: jenkins-docker-cfg
+        mountPath: /kaniko/.docker
   volumes:
     - name: m2
       hostPath:
@@ -55,6 +53,11 @@ spec:
     - name: trivycache
       hostPath:
         path: /tmp/trivycache/
-    - name: kaniko-secret
-      secret:
-        secretName: kaniko-secret
+    - name: jenkins-docker-cfg
+      projected:
+        sources:
+        - secret:
+          name: regcred
+         items:
+           - key: .dockerconfigjson
+             path: config.json

@@ -38,13 +38,15 @@ pipeline {
             }
           }
         }
-        stage('Image Build and Push') {
-          steps {
-            container('kaniko') {
-              sh 'date'
+          stage('Docker BnP') {
+            steps {
+              container('kaniko') {
+                sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd`
+          --insecure --skip-tls-verify --cache=true
+          --destination=docker.io/kushwap1/dsodemo'
+              }
             }
-          }
-        }
+         }
       }
     }
 
