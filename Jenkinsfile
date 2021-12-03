@@ -47,7 +47,6 @@ pipeline {
             container('licensefinder') {
               sh 'ls -al'
               sh '''#!/bin/bash --login
-<<<<<<< HEAD
                     /bin/bash --login
                     rvm use default
                     gem install license_finder
@@ -69,17 +68,6 @@ pipeline {
           }
         }
        }
-=======
-                      /bin/bash --login
-                      rvm use default
-                      gem install license_finder
-                      license_finder
-                      '''
-                 }
-              }
-           }
-        }
->>>>>>> 2873c867a6fce50ead5ba3f3b34783f93f9fefaa
       }
     stage('Package') {
       parallel {
