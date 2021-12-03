@@ -28,6 +28,12 @@ spec:
       command:
         - cat
       tty: true
+    - name: slscan
+      image: shiftleft/sast-scan
+      imagePullPolicy: Always
+      command:
+        - cat
+      tty: true
     - name: licensefinder
       image: licensefinder/license_finder
       command:
