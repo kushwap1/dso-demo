@@ -40,15 +40,15 @@
   - :who: 
     :why: 
     :versions:
-    - 1.2.3
-    :when: 2020-05-31 15:28:30.302764000 Z
+    - 1.2.7
+    :when: 2021-05-31 15:28:30.302764000 Z
 - - :approve
   - logback-classic
   - :who: 
     :why: 
     :versions:
-    - 1.2.3
-    :when: 2020-05-31 15:29:03.621478000 Z
+    - 1.2.7
+    :when: 2021-05-31 15:29:03.621478000 Z
 - - :approve
   - jakarta.xml.bind-api
   - :who: 
@@ -70,3 +70,108 @@
     :versions:
     - 1.3.5
     :when: 2020-05-31 15:29:53.045616000 Z
+- - :approve
+  - h2
+  - :who:
+    :why:
+    :versions:
+    - 1.4.200
+    :when: 2021-05-31
+- - :approve
+  - javax.json
+  - :who:
+    :why:
+    :versions:
+    - 1.1.4
+    :when: 2021-05-31
+- - :approve
+  - javax.ws.rs-api
+  - :who:
+    :why:
+    :versions:
+    - 2.0.1
+    :when: 2021-05-31
+- - :approve
+  - jsr250-api
+  - :who:
+    :why:
+    :versions:
+    - 1.0
+    :when: 2021-05-31
+- - :approve
+  - minlog
+  - :who:
+    :why:
+    :versions:
+    - 1.3.1
+    :when: 2021-05-31
+- - :approve
+  - org.eclipse.sisu.inject
+  - :who:
+    :why:
+    :versions:
+    - 0.3.4
+    :when: 2021-05-31
+- - :approve
+  - org.eclipse.sisu.plexus
+  - :who:
+    :why:
+    :versions:
+    - 0.3.4
+    :when: 2021-05-31
+- - :approve
+  - ossindex-service-api
+  - :who:
+    :why:
+    :versions:
+    - 1.8.1
+    :when: 2021-05-31
+- - :approve
+  - ossindex-service-client
+  - :who:
+    :why:
+    :versions:
+    - 1.8.1
+    :when: 2021-05-31
+- - :approve
+  - package-url-java
+  - :who:
+    :why:
+    :versions:
+    - 1.1.1
+    :when: 2021-05-31
+- - :approve
+  - packager-core
+  - :who:
+    :why:
+    :versions:
+    - 0.17.0
+    :when: 2021-05-31
+- - :approve
+  - packager-rpm
+  - :who:
+    :why:
+    :versions:
+    - 0.17.0
+    :when: 2021-05-31
+- - :approve
+  - pecoff4j
+  - :who:
+    :why:
+    :versions:
+    - 0.0.2.1
+    :when: 2021-05-31
+- - :approve
+  - retirejs-core
+  - :who:
+    :why:
+    :versions:
+    - 3.0.3
+    :when: 2021-05-31
+- - :approve
+  - xz
+  - :who:
+    :why:
+    :versions:
+    - 1.8
+    :when: 2021-05-31
