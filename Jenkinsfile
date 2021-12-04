@@ -7,6 +7,19 @@ pipeline {
     }
   }
   stages {
+    stage('Repo Scan') {
+      parallel {
+        stage('Secrets Scanner') {
+          steps {
+            container('trufflehog') {
+              sh 'git clone ${GIT_URL}'
+              sh 'cd dso-demo && ls -al'
+              sh 'cd dso-demo && trufflehog .'       
+        }
+       }
+      }
+     }
+    }
     stage('Build') {
       parallel {
         stage('Compile') {
