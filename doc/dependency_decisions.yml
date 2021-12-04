@@ -168,12 +168,11 @@
     :versions:
     - 3.0.3
     :when: 2021-05-31
-- - :approve
+- - :permit
   - xz
   - :who:
     :why:
-    :versions:
-    - 1.8
+    :versions: []
     :when: 2021-05-31
 - - :approve
   - aether-util
@@ -182,19 +181,11 @@
     :versions:
     - 1.1.0
     :when: 2021-05-31
-- - :approve
+- - :permit
   - aopalliance
   - :who:
     :why:
-    :versions:
-    - 1.0
-    :when: 2021-05-31
-- - :approve
-  - asm
-  - :who:
-    :why:
-    :versions:
-    - 9.1
+    :versions: []
     :when: 2021-05-31
 - - :approve
   - javax.annotation-api
@@ -217,10 +208,15 @@
     :versions:
     - 0.3.5
     :when: 2021-05-31
-- - :approve
+- - :permit
   - Public Domain
   - :who:
     :why:
-    :versions:
-    - 1.8
+    :versions: []
     :when: 2021-05-31
+- - :permit
+  - New BSD
+  - :who:
+    :why:
+    :versions: []
+    :when: 2020-09-29
