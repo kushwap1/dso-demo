@@ -14,7 +14,7 @@ pipeline {
             container('trufflehog') {
               sh 'git clone ${GIT_URL}'
               sh 'cd dso-demo && ls -al'
-              sh 'cd dso-demo && trufflehog .'       
+              sh 'cd dso-demo && trufflehog --entropy=False .'       
         }
        }
       }
