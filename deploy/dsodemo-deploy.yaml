@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: dsodemo
+  name: dsodemo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dsodemo
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: dsodemo
+    spec:
+      containers:
+      - image: kushwap1/dsodemo
+        name: dsodemo
+        ports:
+        - containerPort: 8080
+        resources: {}
+status: {}
