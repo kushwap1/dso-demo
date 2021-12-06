@@ -1,0 +1,212 @@
+{
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Security Audit for Infrastructure",
+          "rules": [
+            {
+              "id": "CKV_DOCKER_3",
+              "help": {
+                "text": "Ensure that a user for the container has been created.",
+                "markdown": "Ensure that a user for the container has been created."
+              },
+              "name": "UserExists",
+              "properties": {
+                "tags": [
+                  "Scan"
+                ],
+                "precision": "high"
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "fullDescription": {
+                "text": "Ensure that a user for the container has been created."
+              },
+              "helpUri": "https://slscan.io?q=CKV_DOCKER_3",
+              "shortDescription": {
+                "text": "Ensure that a user for the container has been created."
+              }
+            },
+            {
+              "id": "CKV_DOCKER_2",
+              "help": {
+                "text": "Ensure that HEALTHCHECK instructions have been added to container images.",
+                "markdown": "Ensure that HEALTHCHECK instructions have been added to container images."
+              },
+              "name": "HealthcheckExists",
+              "properties": {
+                "tags": [
+                  "Scan"
+                ],
+                "precision": "high"
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "fullDescription": {
+                "text": "Ensure that HEALTHCHECK instructions have been added to container images."
+              },
+              "helpUri": "https://slscan.io?q=CKV_DOCKER_2",
+              "shortDescription": {
+                "text": "Ensure that HEALTHCHECK instructions have been added to container images."
+              }
+            }
+          ],
+          "version": "1.0.0-scan",
+          "fullName": "Security Audit for Infrastructure"
+        }
+      },
+      "conversion": {
+        "tool": {
+          "driver": {
+            "name": "@ShiftLeft/sast-scan"
+          }
+        },
+        "invocation": {
+          "arguments": [
+            "-s",
+            "--framework",
+            "dockerfile",
+            "--quiet",
+            "--no-guide",
+            "-o",
+            "json",
+            "-d",
+            "/app"
+          ],
+          "executionSuccessful": true,
+          "commandLine": "-s --framework dockerfile --quiet --no-guide -o json -d /app",
+          "endTimeUtc": "2021-12-03T19:25:38Z",
+          "workingDirectory": {
+            "uri": "file:///home/pankaj/dso-demo"
+          }
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true,
+          "endTimeUtc": "2021-12-03T19:25:38Z",
+          "workingDirectory": {
+            "uri": "file:///home/pankaj/dso-demo"
+          }
+        }
+      ],
+      "properties": {
+        "metrics": {
+          "total": 2,
+          "critical": 0,
+          "high": 0,
+          "medium": 0,
+          "low": 2
+        }
+      },
+      "results": [
+        {
+          "message": {
+            "markdown": "",
+            "text": "Ensure that a user for the container has been created."
+          },
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "region": {
+                  "snippet": {
+                    "text": "1 FROM maven:3.6-jdk-8\n"
+                  },
+                  "startLine": 1
+                },
+                "artifactLocation": {
+                  "uri": "file:///home/pankaj/dso-demo/Dockerfile"
+                },
+                "contextRegion": {
+                  "snippet": {
+                    "text": "1 FROM maven:3.6-jdk-8\n\nWORKDIR /app\n"
+                  },
+                  "endLine": 3,
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_tags": {}
+          },
+          "baselineState": "new",
+          "partialFingerprints": {
+            "scanPrimaryLocationHash": "1088565255154c7c",
+            "scanFileHash": "8eeb66c1c996f516"
+          },
+          "ruleId": "CKV_DOCKER_3",
+          "ruleIndex": 0
+        },
+        {
+          "message": {
+            "markdown": "",
+            "text": "Ensure that HEALTHCHECK instructions have been added to container images."
+          },
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "region": {
+                  "snippet": {
+                    "text": "1 FROM maven:3.6-jdk-8\n"
+                  },
+                  "startLine": 1
+                },
+                "artifactLocation": {
+                  "uri": "file:///home/pankaj/dso-demo/Dockerfile"
+                },
+                "contextRegion": {
+                  "snippet": {
+                    "text": "1 FROM maven:3.6-jdk-8\n\nWORKDIR /app\n"
+                  },
+                  "endLine": 3,
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_tags": {}
+          },
+          "baselineState": "new",
+          "partialFingerprints": {
+            "scanPrimaryLocationHash": "1088565255154c7c",
+            "scanFileHash": "8eeb66c1c996f516"
+          },
+          "ruleId": "CKV_DOCKER_2",
+          "ruleIndex": 1
+        }
+      ],
+      "automationDetails": {
+        "description": {
+          "text": "Static Analysis Security Test results using @ShiftLeft/sast-scan"
+        },
+        "guid": "debf4005-26e7-4438-a02c-aad655401c5a"
+      },
+      "versionControlProvenance": [
+        {
+          "branch": "development",
+          "repositoryUri": "https://github.com/kushwap1/dso-demo",
+          "revisionId": "9ff9a398f8f7ba1a5d078cd4714c702409316bdf"
+        }
+      ]
+    }
+  ],
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "inlineExternalProperties": [
+    {
+      "guid": "debf4005-26e7-4438-a02c-aad655401c5a",
+      "runGuid": "16df8541-2e68-4023-95b0-3373cca578cc"
+    }
+  ]
+}
