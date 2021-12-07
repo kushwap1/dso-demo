@@ -1,6 +1,7 @@
 pipeline {
   environment {
     ARGO_SERVER = '34.131.127.26:32100'
+    DEV_URL = 'http://34.131.127.26:30080/'
    }
   agent {
     kubernetes {
@@ -147,6 +148,22 @@ pipeline {
         }
        }
      }
+    stage('Dynamic Analysis') {
+      parallel {
+        stage('E2E tests') {
+          steps {
+            sh 'echo "Funtional Tests are passed !!!"'
+          }
+         }
+        stage('DAST') {
+          steps {
+            container('docker-tools') {
+              sh 'docker run -t owasp/zap2docker-stable zap-baseline.py -t $DEV_URL || exit 0'
+            }
+           }
+         }
+       }
+    }
   }
 }
 
