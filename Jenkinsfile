@@ -146,8 +146,7 @@ pipeline {
           sh 'docker run -t schoolofdevops/argocd-cli argocd app wait dsodemo --health --timeout 300 --insecure --server $ARGO_SERVER --auth-token $AUTH_TOKEN'
         }
        }
-      }
      }
-    }
   }
 }
+
