@@ -16,7 +16,12 @@ spec:
       creationTimestamp: null
       labels:
         app: dsodemo
+      annotations:
+        vault.hashicorp.com/agent-inject: 'true'
+        vault.hashicorp.com/role: 'dso-demo'
+        vault.hashicorp.com/agent-inject-secret-database: 'secret/dso-demo/database'
     spec:
+      serviceAccountName: dso-demo
       containers:
       - image: kushwap1/dsodemo
         name: dsodemo

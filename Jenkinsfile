@@ -101,6 +101,15 @@ pipeline {
           }
       }
     }
+    stage('Synk Testing') {
+      steps {
+        echo 'Testing...'
+        snykSecurity(
+          snykInstallation: 'synk',
+          snykTokenId: 'synk_api_token',
+        )
+      }
+    }
     stage('Package') {
       parallel {
         stage('Create Jarfile') {
