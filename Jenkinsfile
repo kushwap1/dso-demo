@@ -106,7 +106,7 @@ pipeline {
         withCredentials([string(credentialsId: 'synk_api_token', variable: 'snyk_token')]) {
           container('snyk-cli') {
             sh 'snyk auth ${snyk_token}'
-            sh 'snyk test --all-projects --org=patrasingh0811'
+            sh 'snyk test --org=patrasingh0811'
             }
         }
       }
