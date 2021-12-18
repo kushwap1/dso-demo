@@ -1,5 +1,6 @@
 pipeline {
   environment {
+    SYNK_API = credentials('synk_api_token')
     ARGO_SERVER = '34.131.127.26:32100'
     DEV_URL = 'http://34.131.127.26:30080/'
    }
@@ -103,12 +104,11 @@ pipeline {
     }
     stage('Synk Testing') {
       steps {
-        echo 'Testing...'
-        snykSecurity(
-          snykInstallation: 'synk',
-          snykTokenId: 'synk_api_token',
-        )
-      }
+          container('snyk-cli') {
+            sh 'auth SYNK_API'
+            sh 'test --org=patrasingh0811'
+            }
+        }
     }
     stage('Package') {
       parallel {

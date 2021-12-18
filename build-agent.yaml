@@ -28,6 +28,12 @@ spec:
       command:
         - cat
       tty: true
+    - name: snyk-cli
+      image: snyk/snyk-cli:maven-3.6.3_java11
+      imagePullPolicy: Always
+      command:
+        - cat
+      tty: true
     - name: slscan
       image: shiftleft/sast-scan
       imagePullPolicy: Always
