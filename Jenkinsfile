@@ -105,8 +105,8 @@ pipeline {
       steps {
         withCredentials([string(credentialsId: 'synk_api_token', variable: 'synk_token')]) {
           container('snyk-cli') {
-            sh 'auth ${synk_token}'
-            sh 'test --org=patrasingh0811'
+            sh 'synk auth ${synk_token}'
+            sh 'synk test --org=patrasingh0811'
             }
         }
       }
