@@ -1,6 +1,5 @@
 pipeline {
   environment {
-    SYNK_API = credentials('synk_api_token')
     ARGO_SERVER = '34.131.127.26:32100'
     DEV_URL = 'http://34.131.127.26:30080/'
    }
@@ -104,11 +103,13 @@ pipeline {
     }
     stage('Synk Testing') {
       steps {
+        withCredentials([string(credentialsId: 'synk_api_token', variable: 'synk_token')]) {
           container('snyk-cli') {
-            sh 'auth SYNK_API'
+            sh 'auth ${synk_token}'
             sh 'test --org=patrasingh0811'
             }
         }
+      }
     }
     stage('Package') {
       parallel {
