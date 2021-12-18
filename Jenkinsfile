@@ -103,10 +103,10 @@ pipeline {
     }
     stage('Synk Testing') {
       steps {
-        withCredentials([string(credentialsId: 'synk_api_token', variable: 'synk_token')]) {
+        withCredentials([string(credentialsId: 'synk_api_token', variable: 'snyk_token')]) {
           container('snyk-cli') {
-            sh 'synk auth ${synk_token}'
-            sh 'synk test --org=patrasingh0811'
+            sh 'snyk auth ${snyk_token}'
+            sh 'snyk test --org=patrasingh0811'
             }
         }
       }
