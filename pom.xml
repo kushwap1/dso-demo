@@ -24,6 +24,14 @@
 			<artifactId>spring-boot-starter-data-rest</artifactId>
 		</dependency>
 
+    <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-core -->
+    <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-core</artifactId>
+        <version>1.2.9</version>
+    </dependency>
+
+
     <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-to-slf4j -->
     <dependency>
         <groupId>org.apache.logging.log4j</groupId>
