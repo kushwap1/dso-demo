@@ -177,7 +177,7 @@ pipeline {
             HAWK_API_KEY = credentials('HAWK_API_KEY')
           }
           steps {
-            container('sdocker-tool') {
+            container('docker-tool') {
               sh 'docker run -v ${WORKSPACE}:/hawk:rw -t -e API_KEY=${HAWK_API_KEY} -e NO_COLOR=true stackhawk/hawkscan'
             }
            }
