@@ -6,4 +6,4 @@ app:
 hawk:
   startupTimeoutMinutes: 1
   spider:
-    base: true
+    base: false

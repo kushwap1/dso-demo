@@ -178,7 +178,7 @@ pipeline {
           }
           steps {
             container('docker-tools') {
-              sh 'docker run -v ${WORKSPACE}:/hawk:rw -t -e API_KEY=${HAWK_API_KEY} -e NO_COLOR=true stackhawk/hawkscan'
+              sh 'docker run -v `pwd`:/hawk:rw -t -e API_KEY=${HAWK_API_KEY} -e NO_COLOR=true stackhawk/hawkscan'
             }
            }
          }
