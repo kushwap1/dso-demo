@@ -1,0 +1,9 @@
+app:
+  applicationId: 3ed47bd4-61f6-4259-aba6-8966f2e754b2
+  host: http://34.131.127.26:30080/
+  env: Development
+
+hawk:
+  startupTimeoutMinutes: 1
+  spider:
+    base: true
