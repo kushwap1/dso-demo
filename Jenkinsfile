@@ -3,6 +3,10 @@ pipeline {
     ARGO_SERVER = '34.131.127.26:32100'
     DEV_URL = 'http://34.131.127.26:30080/'
    }
+  parameters {
+      string(name: 'APP_TYPE', defaultValue: '', description: 'Type of Application')
+      string(name: 'DEP_ENV', defaultValue: '', description: 'Environment where is application will be deployed')
+  }
   agent {
     kubernetes {
       yamlFile 'build-agent.yaml'
@@ -179,7 +183,7 @@ pipeline {
           steps {
             container('docker-tools') {
               sh 'chmod 777 `pwd`/stackhawk.yml'
-              sh 'sleep 5'
+              sh 'ls -al'
               sh 'docker run -v `pwd`/stackhawk.yml:/hawk:rw -t -e API_KEY=${HAWK_API_KEY} -e NO_COLOR=true stackhawk/hawkscan'
             }
            }
