@@ -33,7 +33,7 @@ pipeline {
         stage('Compile') {
           steps {
             script {
-              if (${APP_TYPE} == 'java') {
+              if (params.APP_TYPE == 'java') {
                 container('maven') {
                   echo 'This is Java build and Deployment environment is ${DEP_ENV}'
                   sh 'mvn compile'
