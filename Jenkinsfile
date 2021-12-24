@@ -35,7 +35,7 @@ pipeline {
             script {
               if (params.APP_TYPE == 'java') {
                 container('maven') {
-                  echo 'This is Java build and Deployment environment is ${DEP_ENV}'
+                  echo 'This is Java build and Deployment environment is params.DEP_ENV'
                   sh 'mvn compile'
             }
             } else {
