@@ -178,7 +178,8 @@ pipeline {
           }
           steps {
             container('docker-tools') {
-              sh 'pwd'
+              sh 'chmod 777 `pwd`/stackhawk.yml'
+              sh 'sleep 5'
               sh 'docker run -v `pwd`/stackhawk.yml:/hawk:rw -t -e API_KEY=${HAWK_API_KEY} -e NO_COLOR=true stackhawk/hawkscan'
             }
            }
