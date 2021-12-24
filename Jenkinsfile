@@ -32,9 +32,16 @@ pipeline {
       parallel {
         stage('Compile') {
           steps {
-            container('maven') {
-              sh 'mvn compile'
+            script {
+              if ($APP_TYPE == 'java') {
+                container('maven') {
+                  echo 'This is Java build and Deployment environment is $DEP_ENV'
+                  sh 'mvn compile'
             }
+            } else {
+                echo 'This is non Java build and Deployment environment is $DEP_ENV'
+            }
+          }
           }
         }
       }
